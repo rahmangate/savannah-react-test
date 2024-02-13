@@ -49,7 +49,6 @@ const ProfilePage = () => {
   })
 
   const loadProfileData = async () => {
-    //console.log('loading profile')
     setState({ ...state, loading: true, error: '' })
     const resp = await loadProfile(auth?.currentUser?.phoneNumber)
     if (!resp.success) {

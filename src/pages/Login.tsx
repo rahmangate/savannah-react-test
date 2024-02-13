@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { Button } from '../components/ui/button'
 import {
@@ -17,7 +17,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import useAuth from '../hooks/useAuth'
 
-import { signIn, confirmCode, auth } from '../api'
+import { signIn, confirmCode } from '../api'
 import { ConfirmationCard } from '../components/Confirmation'
 
 const loginFormSchema = yup.object({

@@ -1,5 +1,5 @@
 import { Label } from '@radix-ui/react-label'
-import React, { useState } from 'react'
+import React from 'react'
 import { Button } from './ui/button'
 import {
   CardHeader,
@@ -15,7 +15,6 @@ import * as yup from 'yup'
 
 const confirmFormSchema = yup.object({
   verificationCode: yup.number().label('Confrimation Code').required(),
-  //.max(8),
 })
 
 type ConfirmFormData = yup.InferType<typeof confirmFormSchema>

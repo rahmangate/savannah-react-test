@@ -2,9 +2,28 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Goal of project
+
+The goal is to cerate react app which will allow users to login with phone number and create/update profile.
+
+# Feature
+
+1. Login/Authentication
+2. Confirmation of code setn to phone number
+3. Create/update Profile
+4. Logout
+
+# Technologies
+
+1. React, javascript/Typescript
+2. Firebase
+3. Zustand
+4. Tailwind, radix-ui
+5. Yup , react-hook-form
+
 Hosted on Heroku [react-web](https://savannah-react-test-app-b066dca511da.herokuapp.com/).
 
-**Note: please setup .env !**
+**Note: please setup .env , for testing purpose the .env may be included in the project folder!**
 
 REACT_APP_API_KEY=
 
@@ -32,6 +51,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## `Test phone numbers and verification codes, Note: each number can be used one time `
 
 **Note: Test phone numbers and verification codes, Note: each number can be used one time !**
+
+**Note: to use your personal number check the format. eg +233123454444 !**
 
 +233123454444 - code: 123456
 
@@ -68,7 +89,9 @@ service cloud.firestore {
 
 }
 
-## `firebase firestore db screenshoot inside public/firestore.jpg `
+# `firebase firestore db screenshoot inside public/firestore.jpg `
+
+firestore image [firestore](https://drive.google.com/file/d/16JBd3FdyysUAut1_bTEyDmOsyuAjZrXG/view?usp=sharing)
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
