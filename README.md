@@ -2,7 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**Note: Setup .env !**
+**Note: please setup .env !**
+
 REACT_APP_API_KEY=
 
 REACT_APP_AUTH_DOMAIN=
@@ -28,6 +29,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## `Test phone numbers and verification codes, Note: each number can be used one time `
 
+**Note: Test phone numbers and verification codes, Note: each number can be used one time !**
+
 +233123454444 - code: 123456
 
 +233123455555 - code: 123456
@@ -47,9 +50,7 @@ service cloud.firestore {
     match /databases/{database}/documents {
 
         function isOwner(id){
-
             return request.auth!=null && request.auth.token.phone_number == id;
-
         }
 
         //restrict all access
