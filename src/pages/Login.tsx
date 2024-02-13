@@ -19,7 +19,6 @@ import useAuth from '../hooks/useAuth'
 
 import { signIn, confirmCode, auth } from '../api'
 import { ConfirmationCard } from '../components/Confirmation'
-import { RecaptchaVerifier } from 'firebase/auth'
 
 const loginFormSchema = yup.object({
   phoneNumber: yup.string().label('Phone Number').required().min(8),
@@ -74,8 +73,8 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="h-screen flex justify-center items-center">
-      <Card className=" w-full md:w-[450px]">
+    <div className="h-screen flex justify-center items-center p-3">
+      <Card className="w-full md:w-[450px]">
         {step == 0 && (
           <>
             <CardHeader>

@@ -37,7 +37,10 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
-
+src/api
+src/hooks
+src/pages/Login.tsx
+src/pages/Profile.tsx
 # Dependency directories
 node_modules/
 jspm_packages/

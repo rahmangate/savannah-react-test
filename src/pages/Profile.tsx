@@ -14,6 +14,7 @@ import { toast } from 'react-toastify'
 import useAuth from '../hooks/useAuth'
 
 import { auth, loadProfile, addProfile, signOut } from '../api'
+
 import { UpdateProfileCard } from '../components/UpdateProfile'
 import { Profile } from '../model'
 import { ProfileSkeleton } from '../components/ProfileSkeleton'
@@ -93,7 +94,7 @@ const ProfilePage = () => {
   }, [auth?.currentUser])
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-screen flex justify-center items-center p-3">
       <Card className="w-full md:w-[450px]">
         {state.loading || !isReady ? (
           <ProfileSkeleton />
