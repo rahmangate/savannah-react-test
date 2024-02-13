@@ -70,10 +70,10 @@ export const ConfirmationCard = ({ onConfirm, onGoBack, processing }) => {
             variant="outline"
             className="w-full mt-3"
             onClick={() => {
-              onGoBack()
+              window.location.reload()
             }}
           >
-            Use different phone number{' '}
+            Re-enter phone number
           </Button>
         </div>
       </CardFooter>

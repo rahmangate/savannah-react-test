@@ -53,8 +53,8 @@ const LoginPage = () => {
       setStep(1)
       setConfirmationResults(resp.confirmationResult)
     } else {
-      window.location.reload()
       toast.error(resp?.error)
+      setTimeout(() => window.location.reload(), 400)
     }
   }
 
