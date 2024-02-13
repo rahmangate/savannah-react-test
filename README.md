@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Hosted on Heroku [react-web](https://savannah-react-test-app-b066dca511da.herokuapp.com/).
+
 **Note: please setup .env !**
 
 REACT_APP_API_KEY=
