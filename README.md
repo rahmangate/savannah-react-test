@@ -9,9 +9,10 @@ The goal is to cerate react app which will allow users to login with phone numbe
 # Feature
 
 1. Login/Authentication
-2. Confirmation of code setn to phone number
-3. Create/update Profile
-4. Logout
+2. Confirmation of code sent to phone number
+3. View profile
+4. Create/update Profile
+5. Logout
 
 # Technologies
 
@@ -23,7 +24,7 @@ The goal is to cerate react app which will allow users to login with phone numbe
 
 Hosted on Heroku [react-web](https://savannah-react-test-app-b066dca511da.herokuapp.com/).
 
-**Note: please setup .env , for testing purpose the .env may be included in the project folder!**
+**Note: please setup .env , for testing purpose the .env may be included in the project folder !**
 
 REACT_APP_API_KEY=
 
@@ -91,7 +92,7 @@ service cloud.firestore {
 
 # `firebase firestore db screenshoot inside public/firestore.jpg `
 
-firestore image [firestore](https://drive.google.com/file/d/16JBd3FdyysUAut1_bTEyDmOsyuAjZrXG/view?usp=sharing)
+Remote firestore jpg image [firestore](https://drive.google.com/file/d/16JBd3FdyysUAut1_bTEyDmOsyuAjZrXG/view?usp=sharing)
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
