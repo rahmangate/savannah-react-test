@@ -146,6 +146,7 @@ const ProfilePage = () => {
         ) : (
           tab === 1 && (
             <UpdateProfileCard
+              profile={profile}
               processing={processing}
               onUpdate={(data: any) => {
                 onSubmit(data)

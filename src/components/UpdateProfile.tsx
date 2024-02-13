@@ -1,5 +1,5 @@
 import { Label } from '@radix-ui/react-label'
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { Button } from './ui/button'
 import {
   CardHeader,
@@ -20,15 +20,29 @@ const formSchema = yup.object({
 
 type ConfirmFormData = yup.InferType<typeof formSchema>
 
-export const UpdateProfileCard = ({ onUpdate, onGoBack, processing }) => {
+export const UpdateProfileCard = ({
+  onUpdate,
+  onGoBack,
+  processing,
+  profile,
+}) => {
   const {
     register,
     handleSubmit,
+    setValue,
+
     formState: { errors, isValid },
   } = useForm<ConfirmFormData>({
     resolver: yupResolver(formSchema),
     mode: 'onChange',
   })
+
+  useEffect(() => {
+    if (profile) {
+      setValue('name', profile?.name, { shouldValidate: true })
+      setValue('email', profile?.email, { shouldValidate: true })
+    }
+  }, [profile])
 
   return (
     <>
