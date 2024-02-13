@@ -16,7 +16,20 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 
 function App() {
-  const { isAuth } = useAuth()
+  const { isAuth, logout } = useAuth()
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (!user && isAuth) {
+        console.log('logout..')
+        logout()
+      }
+    })
+
+    return () => {
+      unsubscribe()
+    }
+  }, [])
 
   return (
     <Router>

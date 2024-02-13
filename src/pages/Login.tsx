@@ -43,8 +43,6 @@ const LoginPage = () => {
   const [confirmationResults, setConfirmationResults] = useState(null)
 
   const onSubmit = async (data: LoginFormData) => {
-    //console.log('onSubmit phone', data?.phoneNumber)
-
     setProcessing(true)
     const t = toast.loading('Please wait...')
     const resp = await signIn(`${data.phoneNumber}`)
@@ -55,6 +53,7 @@ const LoginPage = () => {
       setStep(1)
       setConfirmationResults(resp.confirmationResult)
     } else {
+      window.location.reload()
       toast.error(resp?.error)
     }
   }
@@ -75,7 +74,7 @@ const LoginPage = () => {
   return (
     <div className="h-screen flex justify-center items-center p-3">
       <Card className="w-full md:w-[450px]">
-        {step == 0 && (
+        {step === 0 && (
           <>
             <CardHeader>
               <CardTitle>Login</CardTitle>
@@ -112,7 +111,7 @@ const LoginPage = () => {
             </CardFooter>
           </>
         )}
-        {step == 1 && (
+        {step === 1 && (
           <ConfirmationCard
             processing={processing}
             onConfirm={onConfirm}

@@ -81,7 +81,6 @@ const ProfilePage = () => {
   useEffect(() => {
     const unsubscribe = setTimeout(() => {
       setIsReady(true)
-      console.log(profile)
       if (!auth?.currentUser) return
       if (!profile?.email && !state.loading) {
         loadProfileData()
@@ -105,7 +104,7 @@ const ProfilePage = () => {
               Refresh
             </Button>
           </div>
-        ) : tab == 0 ? (
+        ) : tab === 0 ? (
           <>
             <CardHeader>
               <CardTitle>Profile</CardTitle>
@@ -145,7 +144,7 @@ const ProfilePage = () => {
             </CardFooter>
           </>
         ) : (
-          tab == 1 && (
+          tab === 1 && (
             <UpdateProfileCard
               processing={processing}
               onUpdate={(data: any) => {

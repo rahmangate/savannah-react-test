@@ -2,6 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+**Note: Setup .env !**
+REACT_APP_API_KEY=
+
+REACT_APP_AUTH_DOMAIN=
+
+REACT_APP_PROJECT_ID=
+
+REACT_APP_STORAGE_BUCKET=
+
+REACT_APP_MESSAGING_SENDER_ID=
+
+REACT_APP_APP_ID=
+
+REACT_APP_MEASUREMENT_ID=
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -10,6 +25,47 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## `Test phone numbers and verification codes, Note: each number can be used one time `
+
++233123454444 - code: 123456
+
++233123455555 - code: 123456
+
++233123457777 - code: 123456
+
++233123458888 - code: 123456
+
++233123459999 - code: 123456
+
+## `Firstore Security rules`
+
+rules_version = '2';
+
+service cloud.firestore {
+
+    match /databases/{database}/documents {
+
+        function isOwner(id){
+
+            return request.auth!=null && request.auth.token.phone_number == id;
+
+        }
+
+        //restrict all access
+        match /{document=**} {
+            allow read, create, update, delete: if false;
+        }
+
+        match /users/{userId} {
+            allow get, create, update: if isOwner(userId);
+        }
+
+    }
+
+}
+
+## `firebase firestore db screenshoot inside public/firestore.jpg `
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
